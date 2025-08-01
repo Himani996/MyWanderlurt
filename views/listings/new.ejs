@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate")%>
+<body><div class ="row">
+  <div class="col-8 offset-2">
+  <h3> New Listing</h3>
+    <form method="post" action="/listings" novalidate class="needs-validation">
+    <div class="mb-3">
+    <label for="title" class="form-label">Title</label><br/>
+    <input required name="listing[title]" type ="text" 
+    class="form-control" placeholder="enter title"></div>
+    <div class="valid-feedback">
+       good look!
+      </div>
+    <div class="invalid-feedback">
+        Please  enter a valid title;
+      </div>
+    <br/>
+       <div class="mb-3">
+      <label for="description" class="form-label">Description</label><br/>
+    <textarea required name="listing[description]" class="form-control"></textarea>
+  <div class="invalid-feedback">
+        Please enter a valid  description
+      </div>
+  </div>
+    <br/>
+      <div class="mb-3">
+     <label for="image" class="form-label">Image</label><br/>
+    <input required name="listing[image]" placeholder="enter image"
+     type ="text" class="form-control"/>
+     <div class="invalid-feedback">
+        Please enter a valid image link
+      </div>
+    <br/>
+    </div>
+    <div class="row">
+    <div class="mb-3 col-md-4">
+      <label for="price" class="form-label">Price</label><br/>
+    <input required  name="listing[price]" placeholder="enter price"
+   class="form-control"/>
+   <div class="invalid-feedback">
+        Please enter a vaild price
+      </div>
+    <br/>
+    </div>
+    <div class="mb-3 col-md-8">
+      <label for="location" class="form-label">Location</label><br/>
+    <input required  name="listing[location]" placeholder="enter loaction"
+     type ="text" class="form-control"/>
+     <div class="invalid-feedback">
+        Please enter a valid  location
+      </div>
+    <br/>
+    </div></div>
+    <div class="mb-3">
+      <label for="country" class="form-label">Country</label><br/>
+    <input required  name="listing[country]" placeholder="enter country" 
+    type ="text" class="form-control"/>
+    <div class="invalid-feedback">
+        Please enter a valid country
+      </div>
+    <br/>
+    </div>
+    <button class="btn btn-danger add-btn">Add</button>
+</form></div></div>
+</div>
+</body>
