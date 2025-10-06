@@ -61,7 +61,7 @@ httpOnly:true
 },
 };
 app.get("/",(req,res)=>{
-    res.render("home");
+    res.render("listings/home");
 });
 
 app.use(session(sessionOptions));
