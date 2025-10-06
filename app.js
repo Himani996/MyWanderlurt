@@ -5,7 +5,6 @@ const express = require("express");
 const app=express();
 const mongoose=require("mongoose");
 const path=require("path");
-const js = require('js');
 const methodOverride=require("method-override");
 const ejsMate = require('ejs-mate');
 app.use(express.urlencoded({ extended: true }));
