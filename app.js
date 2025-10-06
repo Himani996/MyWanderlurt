@@ -60,12 +60,9 @@ maxAge:7*24*60*60*1000,
 httpOnly:true
 },
 };
-
-// app.get("/",(req,res)=>{
-//     res.send("yes working");
-// });
-
-
+app.get("/",(req,res)=>{
+    res.render("home.ejs");
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
