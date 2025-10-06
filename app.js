@@ -41,7 +41,7 @@ app.engine('ejs',ejsMate);
 const Store=MongoStore.create({
     mongoUrl:process.env.ATLASDB_URL,
     crypto:{
-        secret:process.env.SCERET,
+        sceret:process.env.SCERET,
     },
     touchAfter:24*3600,
 });
