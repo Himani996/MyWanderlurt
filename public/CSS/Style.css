@@ -44,14 +44,15 @@ justify-content: center;
     justify-content: center;
     align-items: space-evenly;
 }
-.card{
+.listing-card{
 border: none !important;
 margin-bottom: 2rem;
 }
 .card-img-top{
     border-radius: 1rem !important;
     width:100% !important;
-    object-fit:cover
+    object-fit:cover;
+    /* margin-right:30px; */
 }
 .card-body{
     padding:0; 
@@ -64,3 +65,7 @@ margin-bottom: 2rem;
 a{
     text-decoration: none;
 }
+
+#map { 
+    height:400px;
+    width:80vh; }

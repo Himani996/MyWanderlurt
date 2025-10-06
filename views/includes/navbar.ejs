@@ -1,13 +1,20 @@
 <nav class="navbar navbar-expand-sm bg-body-light sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">navbar</a>
+    <a class="navbar-brand" href="/listings">navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" ></button>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link " aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/listings">AllListing</a>
-        <a class="nav-link" href="/listings/new">AddListing</a>
+        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">AddListing</a> </div>
+        <div class="navbar-nav ms-auto">
+          <%if(!currUser){%>
+        <a class="nav-link" href="/signup"><b>Sign up</b></a>
+         <a class="nav-link" href="/login"><b>Log in</b></a>
+         <%}%>
+         <%if(currUser){%>
+         <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <%}%>
       </div>
     </div>
   </div>

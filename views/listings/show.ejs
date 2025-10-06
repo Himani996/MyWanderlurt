@@ -2,13 +2,14 @@
 <body>
     <div class="row">
         <div class="col-8 offset-2">
-    <h3> Listing Details :</h3>
-    <div class="card" style="width: 50rem;">
-  <img src="<%=listing.image%>" class="card-img-top" alt="listing_image" style="height:20rem"> </div>
+    <h3><p class="card-text"><b><%=listing.title%></b> <br/><br/></h3>
+    <div class="card listing-card show-card col-6 " style="width: 50rem;">
+  <img src="<%=listing.image.url%>" class="card-img-top" alt="listing_image" style="height:20rem"> </div>
   <div class="row">
     <div class="col-12">
   <div class="card-body">
-    <p class="card-text"><b><%=listing.title%></b> <br/><br/>
+    <p class="card-text">
+     <p> <b><i>Owner By:-<%=listing.owner.username%></i></b></p>
 <b>Description:-</b> <%=listing.description%> <br/>
 <b>Price:-</b> &#8377;<%=listing.price%><br/>
 <b>Location:-</b> <%=listing.location%><br/>
@@ -17,9 +18,113 @@
   </div></div>
 </div>
 <br/>
+<% if (currUser && listing.owner && listing.owner._id.equals(currUser._id)) { %>
+
+<div class="btn">
+
     <a href="/listings/<%=listing._id%>/edit"> <button class="btn btn-danger add-btn">Edit Listing</button></a><br/><br/>
     <form method="POST" action ="/listings/<%=listing._id%>?_method=DELETE">
-    <button class="btn btn-danger add-btn">Delete Listing</button></form>
+    <button class="btn btn-danger add-btn">Delete Listing</button></form><div>
+      <br>
+      <div >
+        <hr/><%}%>
+        
+        <h4> Leaving Rating</h4>
+        <%if(currUser){%>
+        <form action="/listings/<%=listing._id%>/reviews "method="POST" nonvalidate class="needs-validation">
+          <div class="mb-3 mt-3">
+            <label for="rating" class="form-label">Rating</label>
+            <fieldset class="starability-slot">
+  <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+  <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+  <label for="first-rate1" title="Terrible">1 stars</label>
+  <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+  <label for="first-rate2" title="Not good">2 stars</label>
+  <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+  <label for="first-rate3" title="Average">3 stars</label>
+  <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+  <label for="first-rate4" title="Very good">4 stars</label>
+  <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+  <label for="first-rate5" title="Amazing">5 stars</label>
+</fieldset>
+
+            <div class="mb-3 mt-3">
+              <label for="comment"><h4>Comment</h4></label><br>
+              <textarea name="review[comment]" id="comment" cols="100" rows="5"  class="form-control" required ></textarea>
+              <div class="invalid-feedback">
+        Please add some comments
+      </div>
+            </div>
+            <button type="submit" class="btn btn-danger add-btn">Submit</button>
+        </form>
+        <%}%>
+      </div>
+      <hr/>
+      <div>
+       <% if(listing.reviews.length>0){%>
+<p><b>All Reviews</b></p> 
+<div class="row">
+<%for(review of listing.reviews){%>
+<div class="card ms-3 mb-3 col-5">
+  <div class="card-body">
+    <h5 class="card-tittle">@<%=review.author.username%></h5>
+     <p class="starability-result" data-rating="<%= review.rating%>">
+    Rated: 3 stars
+  </p>
+    <p class="card-text"><%= review.comment%></p>
+  <form class="mb-3" method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" >
+<button class="btn btn-sm btn-dark">Delete</button></form>
+</div></div><%}%>
+
+</div><%}%>
+<div class="col-8 offset-3 ">
+<h3> where you'll be</h3>
+</div>
     </div>
     </div>
+    
+    <!-- <script src="/CSS/JS/map.js"> -->
+</script>
 </body>
+
+
+<!-- 
+
+
+// const map = L.map('map').setView([28.6139, 77.2088], 11);
+
+//   // OpenStreetMap tile layer
+//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     maxZoom: 19,
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//   }).addTo(map);
+
+//   // Example: Marker at Delhi
+//   L.marker([28.6139, 77.2088]).addTo(map)
+//     .bindPopup('Delhi')
+//     .openPopup();
+
+
+const map = L.map('map').setView([20.5937, 78.9629], 5); // India center
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors',
+  maxZoom: 19
+}).addTo(map);
+
+// Fetch listings from backend
+fetch('/listings/json')
+  .then(res => res.json())
+  .then(listings => {
+    listings.forEach(listing => {
+      if(listing.lat && listing.lon){
+        L.marker([parseFloat(listing.lat), parseFloat(listing.lon)])
+          .addTo(map)
+          .bindPopup(`<b>${listing.title}</b><br>${listing.location}`);
+      }
+    });
+
+    // Optional: center map to first listing
+    if(listings.length > 0){
+      map.setView([parseFloat(listings[0].lat), parseFloat(listings[0].lon)], 12);
+    }
+  }); -->

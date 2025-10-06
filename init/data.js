@@ -1,3 +1,167 @@
+// const sampleListings = [
+//   {
+//     title: "Cozy Mountain Retreat",
+//     description: "Peaceful cabin surrounded by mountains and pine trees.",
+//     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+//     price: 120,
+//     location: "Manali",
+//     country: "India"
+//   },
+//   {
+//     title: "Luxury Beach Villa",
+//     description: "Private villa with ocean view and infinity pool.",
+//     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+//     price: 350,
+//     location: "Bali",
+//     country: "Indonesia"
+//   },
+//   {
+//     title: "Rustic Countryside Cottage",
+//     description: "Charming cottage perfect for a quiet getaway.",
+//     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+//     price: 90,
+//     location: "Cotswolds",
+//     country: "UK"
+//   },
+//   {
+//     title: "Modern City Apartment",
+//     description: "Stylish apartment in the heart of the city.",
+//     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+//     price: 200,
+//     location: "New York",
+//     country: "USA"
+//   },
+//   {
+//     title: "Lakeview Cabin",
+//     description: "Beautiful cabin with panoramic lake views.",
+//     image: "https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=800&q=80",
+//     price: 150,
+//     location: "Nainital",
+//     country: "India"
+//   },
+//   {
+//     title: "Desert Luxury Camp",
+//     description: "Experience the desert with comfort and style.",
+//     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+//     price: 180,
+//     location: "Jaisalmer",
+//     country: "India"
+//   },
+//   {
+//     title: "Snowy Ski Lodge",
+//     description: "Perfect lodge for a skiing adventure.",
+//     image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
+//     price: 250,
+//     location: "Swiss Alps",
+//     country: "Switzerland"
+//   },
+//   {
+//     title: "Tropical Jungle Stay",
+//     description: "Eco-friendly stay in the middle of the jungle.",
+//     image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=80",
+//     price: 130,
+//     location: "Kerala",
+//     country: "India"
+//   },
+//   {
+//     title: "Historic Castle",
+//     description: "Live like royalty in a real medieval castle.",
+//     image: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80",
+//     price: 400,
+//     location: "Edinburgh",
+//     country: "Scotland"
+//   },
+//   {
+//     title: "Ocean Cliff House",
+//     description: "Modern house built on the edge of a cliff.",
+//     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+//     price: 320,
+//     location: "Goa",
+//     country: "India"
+//   },
+//   {
+//     title: "Mountain Lake Retreat",
+//     description: "Cabin near a serene mountain lake, perfect for fishing.",
+//     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+//     price: 140,
+//     location: "Himachal Pradesh",
+//     country: "India"
+//   },
+//   {
+//     title: "Greek Cliff Villa",
+//     description: "Whitewashed villa with stunning sea views in Santorini.",
+//     image: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80",
+//     price: 380,
+//     location: "Santorini",
+//     country: "Greece"
+//   },
+//   {
+//     title: "Norwegian Fjord Cabin",
+//     description: "Stay in a traditional wooden cabin beside fjords.",
+//     image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=80",
+//     price: 210,
+//     location: "Bergen",
+//     country: "Norway"
+//   },
+//   {
+//     title: "Amazon Rainforest Lodge",
+//     description: "Eco lodge deep inside the rainforest with river view.",
+//     image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+//     price: 260,
+//     location: "Amazonas",
+//     country: "Brazil"
+//   },
+//   {
+//     title: "Icelandic Cabin",
+//     description: "Wooden hut surrounded by snow and hot springs nearby.",
+//     image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
+//     price: 230,
+//     location: "Reykjavik",
+//     country: "Iceland"
+//   },
+//   {
+//     title: "Moroccan Riad",
+//     description: "Traditional riad with mosaic tiles and courtyards.",
+//     image: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80",
+//     price: 200,
+//     location: "Marrakech",
+//     country: "Morocco"
+//   },
+//   {
+//     title: "Safari Tent",
+//     description: "Luxury tent with wildlife right outside your door.",
+//     image: "https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=800&q=80",
+//     price: 190,
+//     location: "Serengeti",
+//     country: "Tanzania"
+//   },
+//   {
+//     title: "Tokyo Capsule Hotel",
+//     description: "Minimalist capsule rooms in central Tokyo.",
+//     image: "https://images.unsplash.com/photo-1467987506553-8f3916508521?auto=format&fit=crop&w=800&q=80",
+//     price: 80,
+//     location: "Tokyo",
+//     country: "Japan"
+//   },
+//   {
+//     title: "Dubai Desert Dome",
+//     description: "Modern dome-style accommodation in the desert.",
+//     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+//     price: 340,
+//     location: "Dubai",
+//     country: "UAE"
+//   },
+//   {
+//     title: "Paris Loft Apartment",
+//     description: "Charming loft in the heart of Paris with balcony view.",
+//     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+//     price: 270,
+//     location: "Paris",
+//     country: "France"
+//   }
+// ];
+// module.exports.data=sampleListings;
+
 const sampleListings = [
   {
     title: "Cozy Beachfront Cottage",

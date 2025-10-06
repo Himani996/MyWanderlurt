@@ -1,0 +1,48 @@
+<% layout('/layouts/boilerplate')%>
+<div class="row">
+<div class=" col-6 offset-3" >
+    <h4><b>SignUp</b></h4><br>
+    <div class="mb-3">
+<form action="/signup" method="POST" novalidate class="needs-validation">
+  <label class="form-label">Username</label>
+  <input type="text" class="form-control" placeholder="Enter username" 
+         required minlength="3" name="username" />
+  <div class="invalid-feedback">Please enter a valid username (min 3 chars)</div>
+  
+  <br>
+  
+  <label class="form-label">Email</label>
+  <input type="email" class="form-control" placeholder="Enter email" 
+         required name="email" />
+  <div class="invalid-feedback">Please enter a valid email address</div>
+  
+  <br>
+  
+  <label class="form-label">Password</label>
+   <div class="input-group">
+  <input type="password" id="password"class="form-control" placeholder="Enter password"
+         required minlength="6" name="password" />
+          <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+      <i class="fa-solid fa-eye"></i>
+    </button>
+      <div class="invalid-feedback">Password must be at least 6 characters</div>
+</div>
+
+  
+  <br>
+  
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+    <label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+    <div class="invalid-feedback">You must agree before submitting.</div>
+  </div>
+  
+  <br>
+  
+  <button type="submit" class="btn btn-danger add-btn">Submit</button>
+</form>
+</div>
+<br>
+<br>
+</div>
+</div>
