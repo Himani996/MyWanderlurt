@@ -54,14 +54,14 @@ const sessionOptions={
 secret:process.env.SCERET,
 resave:false,
 saveUninitialized:true,
-Cookie:{
+cookie:{
 expire:Date.now()+7*24*60*60*1000,
 maxAge:7*24*60*60*1000,
 httpOnly:true
 },
 };
 app.get("/",(req,res)=>{
-    res.render("home.ejs");
+    res.render("home");
 });
 
 app.use(session(sessionOptions));
