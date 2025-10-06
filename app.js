@@ -50,7 +50,7 @@ Store.on("error",()=>{
 });
 
 const sessionOptions={
-     store=Store,
+     store:Store,
 secret:process.env.SCERET,
 resave:false,
 saveUninitialized:true,
