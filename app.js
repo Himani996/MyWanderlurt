@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV !='Producation'){
+if(process.env.NODE_ENV !='Production'){
 require('dotenv').config();}
 
 const express = require("express");
@@ -55,7 +55,7 @@ secret:process.env.SCERET,
 resave:false,
 saveUninitialized:true,
 cookie:{
-expire:Date.now()+7*24*60*60*1000,
+expires:Date.now()+7*24*60*60*1000,
 maxAge:7*24*60*60*1000,
 httpOnly:true
 },
