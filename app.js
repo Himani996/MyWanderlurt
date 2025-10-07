@@ -100,6 +100,6 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).send (message);
 });
 
-app.listen(process.env.PORT || 3000,()=>{
+app.listen(process.env.PORT ,()=>{
     console.log("working");
 });
