@@ -14,9 +14,6 @@ router.get("/json", async (req, res) => {
   res.json(listings);
 });
 
-router.get("/",(req, res) => {
-    res.render('index.js'); // home.ejs file views folder me honi chahiye
-});
 
 // ✅ 2. index + create
 router
