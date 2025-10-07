@@ -79,18 +79,10 @@ app.use((req,res,next)=>{
     next();
 });
 
-// app.get("/demouser",async(req,res)=>{
-//     try{
-// let fakeUser=new User({
-//     email:"himanigautam2109@gmail.com",
-// username:"himani99656546464"
-// })
-// let registeredUser =await
-//   res.status(200).send(registeredUser);
-//   } catch (err) {
-//     res.status(500).send(err.message);
-//   }
-// });
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
