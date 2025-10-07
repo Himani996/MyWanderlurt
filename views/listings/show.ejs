@@ -78,7 +78,6 @@
 
 </div><%}%>
 <div class="col-8 offset-3 ">
-<h3> where you'll be</h3>
 </div>
     </div>
     </div>
@@ -91,40 +90,6 @@
 <!-- 
 
 
-// const map = L.map('map').setView([28.6139, 77.2088], 11);
-
-//   // OpenStreetMap tile layer
-//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//   }).addTo(map);
-
-//   // Example: Marker at Delhi
-//   L.marker([28.6139, 77.2088]).addTo(map)
-//     .bindPopup('Delhi')
-//     .openPopup();
 
 
-const map = L.map('map').setView([20.5937, 78.9629], 5); // India center
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors',
-  maxZoom: 19
-}).addTo(map);
 
-// Fetch listings from backend
-fetch('/listings/json')
-  .then(res => res.json())
-  .then(listings => {
-    listings.forEach(listing => {
-      if(listing.lat && listing.lon){
-        L.marker([parseFloat(listing.lat), parseFloat(listing.lon)])
-          .addTo(map)
-          .bindPopup(`<b>${listing.title}</b><br>${listing.location}`);
-      }
-    });
-
-    // Optional: center map to first listing
-    if(listings.length > 0){
-      map.setView([parseFloat(listings[0].lat), parseFloat(listings[0].lon)], 12);
-    }
-  }); -->
